@@ -1,8 +1,12 @@
-import './App.css';
+import "./App.css";
+import Induccion from "./Induccion";
+import Nav from "./Nav";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Nav />
+      <Induccion />
     </div>
   );
 }
