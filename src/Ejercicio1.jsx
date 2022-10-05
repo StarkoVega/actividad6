@@ -2,7 +2,7 @@ import { useState } from "react";
 import Latex from "react-latex";
 
 const Ejercicio1 = () => {
-  const formula1 = "$$\\sum_{i=1}^n i $$";
+  const formula1 = "$$1+2+3+4+5+...+n$$";
   const formula2 = "$$\\sum_{i=1}^n i =\\frac{n(n+1)}{2}$$";
 
   const [input, setInput] = useState(0);
@@ -11,11 +11,11 @@ const Ejercicio1 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let str = `$$\\sum_{i=1}^{${input}} i $$`;
+    let str = "";
     let resultado1 = 0;
     for (let i = 1; i <= input; i++) {
       i === 1
-        ? (str = str.concat(`$$=${i}$$`))
+        ? (str = str.concat(`$$${i}$$`))
         : (str = str.concat(`$$+${i}$$`));
       resultado1 += i;
     }
@@ -37,9 +37,9 @@ const Ejercicio1 = () => {
         <div className="col col-md-8">
           <h2 className="">Ejercicio 1</h2>
           <p className="fs-5 lh-lg">
-            Encuentra el resultado de la sumatoria <br />
-            <Latex>{formula1}</Latex> <br />
-            Usando la formula de Gauss <br />
+            Encuentra el resultado de la suma<br />
+            <Latex>{formula1}</Latex><br />
+            Usando la formula de Gauss<br />
             <Latex>{formula2}</Latex>
           </p>
           <div className="row justify-content-center my-3">
@@ -57,7 +57,7 @@ const Ejercicio1 = () => {
                   />
                 </div>
                 <div className="mb-4 text-center">
-                  <button className="btn btn-primary">Calcular</button>
+                  <button type="submit" className="btn btn-primary">Calcular</button>
                 </div>
               </form>
             </div>

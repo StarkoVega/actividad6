@@ -1,7 +1,7 @@
 const Induccion = () => {
   return (
     <header className="container">
-      <div className="row align-items-center mt-5">
+      <div className="row align-items-center">
         <div className="col-md-auto">
           <h1 className="display-1">
             Induccion
