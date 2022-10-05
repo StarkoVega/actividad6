@@ -1,12 +1,16 @@
 const Induccion = () => {
   return (
     <header className="container">
-      <div className="row">
-        <div className="col-4">
-          <h1>Induccion Matematica</h1>
+      <div className="row align-items-center mt-5">
+        <div className="col-md-auto">
+          <h1 className="display-1">
+            Induccion
+            <br />
+            Matematica
+          </h1>
         </div>
-        <div className="col-8">
-          <p>
+        <div className="col">
+          <p className="lead">
             En matemáticas, la inducción es un razonamiento que permite
             demostrar proposiciones que dependen de una variable n que toma una
             infinidad de valores enteros. En términos simples, la inducción
