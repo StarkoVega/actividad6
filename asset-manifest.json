@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/StarkoVega.github.io/actividad6/static/css/main.6414cb73.css",
+    "main.js": "/StarkoVega.github.io/actividad6/static/js/main.1a889bec.js",
+    "index.html": "/StarkoVega.github.io/actividad6/index.html",
+    "main.6414cb73.css.map": "/StarkoVega.github.io/actividad6/static/css/main.6414cb73.css.map",
+    "main.1a889bec.js.map": "/StarkoVega.github.io/actividad6/static/js/main.1a889bec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6414cb73.css",
+    "static/js/main.1a889bec.js"
+  ]
+}
