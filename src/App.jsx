@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/actividad6/">
         <Nav />
         <Routes>
           <Route path="/" element={<Induccion />} />
