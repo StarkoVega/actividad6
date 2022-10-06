@@ -20,19 +20,31 @@ const Ejercicio4 = () => {
     for (let i = 0; i <= input.n; i++) {
       i === 0
         ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
-        : (input.a * Math.pow(input.r, i)<0)? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`)) : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
+        : input.a * Math.pow(input.r, i) < 0
+        ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
+        : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
       resultado1 += input.a * Math.pow(input.r, i);
     }
     str = str.concat(`$$=${resultado1}$$`);
     setFormula3(str);
-    let resultado2 =
-      (input.a * Math.pow(input.r, parseInt(input.n) + 1) - input.a) /
-      (input.r - 1);
-    setFormula4(
-      `$$\\sum_{i=0}^{${input.n}} ar^i = \\frac{${input.a}(${input.r}^{${
-        parseInt(input.n) + 1
-      }})- ${input.a}}{${parseInt(input.r) - 1}} =${resultado2}$$`
-    );
+    let resultado2;
+    if (parseInt(input.r) !== 1) {
+      resultado2 =
+        (input.a * Math.pow(input.r, parseInt(input.n) + 1) - input.a) /
+        (input.r - 1);
+      setFormula4(
+        `$$\\sum_{i=0}^{${input.n}} ${input.a}(${input.r}^i) = \\frac{${
+          input.a
+        }(${input.r}^{${parseInt(input.n) + 1}})${input.a<0? `+${Math.abs(input.a)}`:`-${input.a}`}}{${
+          parseInt(input.r) - 1
+        }} =${resultado2}$$`
+      );
+    } else {
+      resultado2 = input.a * (parseInt(input.n) + 1);
+      setFormula4(
+        `$$\\sum_{i=0}^{${input.n}} ${input.a}(${input.r}^i) = ${input.a}(${input.n}+1) =${resultado2}$$`
+      );
+    }
   };
 
   const handleChange = (event) => {
