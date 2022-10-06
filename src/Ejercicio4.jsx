@@ -15,24 +15,28 @@ const Ejercicio4 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // let str = "";
-    // let resultado1 = 0;
-    // for (let i = 0; i <= input; i++) {
-    //   i === 0
-    //     ? (str = str.concat(`$$${Math.pow(2, i)}$$`))
-    //     : (str = str.concat(`$$+${Math.pow(2, i)}$$`));
-    //   resultado1 += Math.pow(2, i);
-    // }
-    // str = str.concat(`$$=${resultado1}$$`);
-    // setFormula3(str);
-    // let resultado2 = Math.pow(2, parseInt(input) + 1) - 1;
-    // setFormula4(
-    //   `$$\\sum_{i=0}^{${input}} 2^i = 2^{${input}+1} -1 =${resultado2}$$`
-    // );
+    let str = "";
+    let resultado1 = 0;
+    for (let i = 0; i <= input.n; i++) {
+      i === 0
+        ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
+        : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
+      resultado1 += input.a * Math.pow(input.r, i);
+    }
+    str = str.concat(`$$=${resultado1}$$`);
+    setFormula3(str);
+    let resultado2 =
+      (input.a * Math.pow(input.r, parseInt(input.n) + 1) - input.a) /
+      (input.r - 1);
+    setFormula4(
+      `$$\\sum_{i=0}^{${input.n}} ar^i = \\frac{${input.a}(${input.r}^{${
+        parseInt(input.n) + 1
+      }})- ${input.a}}{${parseInt(input.r) - 1}} =${resultado2}$$`
+    );
   };
 
   const handleChange = (event) => {
-    // setInput(...input,[event.target.id]: event.target.value);
+    setInput({ ...input, [event.target.id]: event.target.value });
     console.log(event.target.id);
   };
 
@@ -52,6 +56,28 @@ const Ejercicio4 = () => {
           <div className="row justify-content-center my-3">
             <div className="col-lg-8">
               <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label htmlFor="a" className="form-label">
+                    a:
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control mb-4"
+                    id="a"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="r" className="form-label">
+                    r:
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control mb-4"
+                    id="r"
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="mb-4">
                   <label htmlFor="n" className="form-label">
                     n:
