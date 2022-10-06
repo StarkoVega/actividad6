@@ -20,7 +20,7 @@ const Ejercicio4 = () => {
     for (let i = 0; i <= input.n; i++) {
       i === 0
         ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
-        : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
+        : (input.a * Math.pow(input.r, i)<0)? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`)) : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
       resultado1 += input.a * Math.pow(input.r, i);
     }
     str = str.concat(`$$=${resultado1}$$`);
@@ -87,6 +87,7 @@ const Ejercicio4 = () => {
                     className="form-control mb-4"
                     id="n"
                     onChange={handleChange}
+                    min="0"
                   />
                 </div>
                 <div className="mb-4 text-center">

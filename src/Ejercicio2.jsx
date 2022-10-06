@@ -57,6 +57,7 @@ const Ejercicio2 = () => {
                     className="form-control mb-4"
                     id="n"
                     onChange={handleChange}
+                    min="1"
                   />
                 </div>
                 <div className="mb-4 text-center">
