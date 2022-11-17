@@ -15,34 +15,31 @@ const Ejercicio4 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    let a = parseInt(input.a);
+    let r = parseInt(input.r);
+    let n = parseInt(input.n);
     let str = "";
     let resultado1 = 0;
-    for (let i = 0; i <= input.n; i++) {
-      i === 0
-        ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
-        : input.a * Math.pow(input.r, i) < 0
-        ? (str = str.concat(`$$${input.a * Math.pow(input.r, i)}$$`))
-        : (str = str.concat(`$$+${input.a * Math.pow(input.r, i)}$$`));
-      resultado1 += input.a * Math.pow(input.r, i);
+    for (let i = 0; i <= n; i++) {
+      i === 0 || a * Math.pow(r, i) < 0
+        ? (str = str.concat(`$$${a * Math.pow(r, i)}$$`))
+        : (str = str.concat(`$$+${a * Math.pow(r, i)}$$`));
+      resultado1 += a * Math.pow(r, i);
     }
     str = str.concat(`$$=${resultado1}$$`);
     setFormula3(str);
     let resultado2;
-    if (parseInt(input.r) !== 1) {
-      resultado2 =
-        (input.a * Math.pow(input.r, parseInt(input.n) + 1) - input.a) /
-        (input.r - 1);
+    if (r !== 1) {
+      resultado2 = (a * Math.pow(r, n + 1) - a) / (r - 1);
       setFormula4(
-        `$$\\sum_{i=0}^{${input.n}} ${input.a}(${input.r}^i) = \\frac{${
-          input.a
-        }(${input.r}^{${parseInt(input.n) + 1}})${input.a<0? `+${Math.abs(input.a)}`:`-${input.a}`}}{${
-          parseInt(input.r) - 1
-        }} =${resultado2}$$`
+        `$$\\sum_{i=0}^{${n}} ${a}(${r}^i) = \\frac{${a}(${r}^{${n + 1}})${
+          a < 0 ? `+${Math.abs(a)}` : `-${a}`
+        }}{${r - 1}} =${resultado2}$$`
       );
     } else {
-      resultado2 = input.a * (parseInt(input.n) + 1);
+      resultado2 = a * (n + 1);
       setFormula4(
-        `$$\\sum_{i=0}^{${input.n}} ${input.a}(${input.r}^i) = ${input.a}(${input.n}+1) =${resultado2}$$`
+        `$$\\sum_{i=0}^{${n}} ${a}(${r}^i) = ${a}(${n}+1) =${resultado2}$$`
       );
     }
   };

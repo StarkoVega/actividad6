@@ -33,7 +33,7 @@ const Ejercicio5 = () => {
     <main className="container mt-5">
       <div className="row justify-content-center">
         <div className="col col-md-8">
-          <h2 className="">Ejercicio 2</h2>
+          <h2 className="">Ejercicio 5</h2>
           <p className="fs-5 lh-lg">
             Encuentra el resultado de la suma
             <br />

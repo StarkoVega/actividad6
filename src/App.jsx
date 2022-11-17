@@ -8,12 +8,12 @@ import Ejercicio4 from "./Ejercicio4";
 import Ejercicio5 from "./Ejercicio5";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Router basename="/actividad6/">
+      <Router>
         <Nav />
         <Routes>
           <Route path="/" element={<Induccion />} />
